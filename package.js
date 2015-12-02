@@ -12,7 +12,20 @@ Npm.depends({'request' : '2.67.0'});
 Package.onUse(function(api) {
   api.versionsFrom('1.2.1');
   api.use('ecmascript');
-  api.addFiles('meteor-bigip-client.js');
+  api.export('BigipClient', 'server');
+  api.addFiles('bigip-icontrol-rest.js', 'server');
+  api.addFiles('bigip-client-defs.js', 'server');
+  api.addFiles('bigip-client-create.js', 'server');
+  api.addFiles('bigip-client-delete.js', 'server');
+  api.addFiles('bigip-client-install.js', 'server');
+  api.addFiles('bigip-client-list.js', 'server');
+  api.addFiles('bigip-client-load.js', 'server');
+  api.addFiles('bigip-client-modify.js', 'server');
+  api.addFiles('bigip-client-qkview.js', 'server');
+  api.addFiles('bigip-client-reboot.js', 'server');
+  api.addFiles('bigip-client-restart.js', 'server');
+  api.addFiles('bigip-client-save.js', 'server');
+  api.addFiles('bigip-client-show.js', 'server');
 });
 
 Package.onTest(function(api) {

@@ -1,0 +1,1 @@
+BigipClient.qkview = function () { }

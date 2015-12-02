@@ -1,0 +1,1 @@
+BigipClient.restart.service = function () { }
