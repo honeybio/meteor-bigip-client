@@ -163,3 +163,79 @@ bigipRestList = function(ip, user, pass, url, options) {
     }
   }
 }
+
+bigipRestDelete = function(ip, user, pass, url) {
+  /**
+  * Method Description
+  *
+  * @method Method Name
+  * @param {object} Parameters
+  * @return {boolean} return value
+  */
+  var opt = { };
+  if (options !== undefined) {
+    opt = options;
+  }
+  var bip = new iControlRest({
+    host:   ip,
+    user:   user,
+    pass:   pass,
+  });
+  var syncList = Meteor.wrapAsync(bip.delete, bip);
+
+  try {
+    var result = syncList(url);
+    if (typeof result !== 'undefined') {
+      return true;
+    } else {
+      return false;
+    }
+  } catch (e) {
+    if (e.message == 401) {
+      throw new Meteor.Error(401, 'Unauthorized', 'Bad username or password');
+    } else if (e.message == 400) {
+      throw new Meteor.Error(400, 'Unexpected URI', 'Bad URI');
+    } else {
+      console.log(e.message);
+      throw new Meteor.Error(500, 'Server Error', e.message);
+    }
+  }
+}
+
+bigipRestCreate = function(ip, user, pass, url, body) {
+  /**
+  * Method Description
+  *
+  * @method Method Name
+  * @param {object} Parameters
+  * @return {boolean} return value
+  */
+  var opt = { };
+  if (options !== undefined) {
+    opt = options;
+  }
+  var bip = new iControlRest({
+    host:   ip,
+    user:   user,
+    pass:   pass,
+  });
+  var syncList = Meteor.wrapAsync(bip.create, bip);
+
+  try {
+    var result = syncList(url, body);
+    if (typeof result !== 'undefined') {
+      return true;
+    } else {
+      return false;
+    }
+  } catch (e) {
+    if (e.message == 401) {
+      throw new Meteor.Error(401, 'Unauthorized', 'Bad username or password');
+    } else if (e.message == 400) {
+      throw new Meteor.Error(400, 'Unexpected URI', 'Bad URI');
+    } else {
+      console.log(e.message);
+      throw new Meteor.Error(500, 'Server Error', e.message);
+    }
+  }
+}

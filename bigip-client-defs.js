@@ -4,36 +4,68 @@
 BigipClient = {
   create: {
     analytics: { },
-    apm: { },
+    apm: {
+      configuration: { },
+    },
     asm: { },
     auth: { },
     cli: { },
     cm: { },
-    gtm: { },
-    ltm: { },
+    gtm: {
+      global_settings: { },
+      wideip: { },
+      pool: { },
+    },
+    ltm: {
+      data_group: { },
+      dns: {
+        dnssec: { },
+      },
+      monitor: { },
+      profile: { },
+      persistnce: { },
+    },
     mgmt: { },
     net: { },
     security: {
       firewall: { },
     },
-    sys: { },
+    sys: {
+      crypto: { },
+    },
     wom: { },
   },
   delete: {
     analytics: { },
-    apm: { },
+    apm: {
+      configuration: { },
+    },
     asm: { },
     auth: { },
     cli: { },
     cm: { },
-    gtm: { },
-    ltm: { },
+    gtm: {
+      global_settings: { },
+      wideip: { },
+      pool: { },
+    },
+    ltm: {
+      data_group: { },
+      dns: {
+        dnssec: { },
+      },
+      monitor: { },
+      profile: { },
+      persistnce: { },
+    },
     mgmt: { },
     net: { },
     security: {
       firewall: { },
     },
-    sys: { },
+    sys: {
+      crypto: { },
+    },
     wom: { },
   },
   install: {
@@ -45,7 +77,9 @@ BigipClient = {
   },
   list: {
     analytics: { },
-    apm: { },
+    apm: {
+      configuration: { },
+    },
     asm: { },
     auth: { },
     cli: { },
@@ -82,19 +116,35 @@ BigipClient = {
   },
   modify: {
     analytics: { },
-    apm: { },
+    apm: {
+      configuration: { },
+    },
     asm: { },
     auth: { },
     cli: { },
     cm: { },
-    gtm: { },
-    ltm: { },
+    gtm: {
+      global_settings: { },
+      wideip: { },
+      pool: { },
+    },
+    ltm: {
+      data_group: { },
+      dns: {
+        dnssec: { },
+      },
+      monitor: { },
+      profile: { },
+      persistnce: { },
+    },
     mgmt: { },
     net: { },
     security: {
       firewall: { },
     },
-    sys: { },
+    sys: {
+      crypto: { },
+    },
     wom: { },
   },
   qkview: { },
@@ -110,19 +160,35 @@ BigipClient = {
   },
   show: {
     analytics: { },
-    apm: { },
+    apm: {
+      configuration: { },
+    },
     asm: { },
     auth: { },
     cli: { },
     cm: { },
-    gtm: { },
-    ltm: { },
+    gtm: {
+      global_settings: { },
+      wideip: { },
+      pool: { },
+    },
+    ltm: {
+      data_group: { },
+      dns: {
+        dnssec: { },
+      },
+      monitor: { },
+      profile: { },
+      persistnce: { },
+    },
     mgmt: { },
     net: { },
     security: {
       firewall: { },
     },
-    sys: { },
+    sys: {
+      crypto: { },
+    },
     wom: { },
   },
 }
