@@ -1010,11 +1010,87 @@ BigipClient.list.ltm.virtual_address = function (bigip, obj) {
     }
   }
 }
+BigipClient.list.net.interface = function (bigip, obj) {
+  if (bigip.iControl == 'rest') {
+    if (obj === undefined) {
+      var lurl = '/net/interface'
+      // list without name
+      var response = bigipRestList(bigip.ip, bigip.user, bigip.pass, lurl);
+      return response;
+    } else {
+      // convert virtual name to rest name
+      var objRestName = obj.replace(/\//g, "~");
+      var lurl = '/net/interface/' + objRestName;
+      var response = bigipRestList(bigip.ip, bigip.user, bigip.pass, lurl);
+      return response;
+    }
+  }
+}
 
-BigipClient.list.net.route = function () { }
-BigipClient.list.net.self = function () { }
-BigipClient.list.net.trunk = function () { }
-BigipClient.list.net.vlan = function () { }
+BigipClient.list.net.route = function (bigip, obj) {
+  if (bigip.iControl == 'rest') {
+    if (obj === undefined) {
+      var lurl = '/net/route'
+      // list without name
+      var response = bigipRestList(bigip.ip, bigip.user, bigip.pass, lurl);
+      return response;
+    } else {
+      // convert virtual name to rest name
+      var objRestName = obj.replace(/\//g, "~");
+      var lurl = '/net/route/' + objRestName;
+      var response = bigipRestList(bigip.ip, bigip.user, bigip.pass, lurl);
+      return response;
+    }
+  }
+}
+BigipClient.list.net.self = function (bigip, obj) {
+  if (bigip.iControl == 'rest') {
+    if (obj === undefined) {
+      var lurl = '/net/self'
+      // list without name
+      var response = bigipRestList(bigip.ip, bigip.user, bigip.pass, lurl);
+      return response;
+    } else {
+      // convert virtual name to rest name
+      var objRestName = obj.replace(/\//g, "~");
+      var lurl = '/net/self/' + objRestName;
+      var response = bigipRestList(bigip.ip, bigip.user, bigip.pass, lurl);
+      return response;
+    }
+  }
+}
+BigipClient.list.net.trunk = function (bigip, obj) {
+  if (bigip.iControl == 'rest') {
+    if (obj === undefined) {
+      var lurl = '/net/trunk'
+      // list without name
+      var response = bigipRestList(bigip.ip, bigip.user, bigip.pass, lurl);
+      return response;
+    } else {
+      // convert virtual name to rest name
+      var objRestName = obj.replace(/\//g, "~");
+      var lurl = '/net/trunk/' + objRestName;
+      var response = bigipRestList(bigip.ip, bigip.user, bigip.pass, lurl);
+      return response;
+    }
+  }
+}
+BigipClient.list.net.vlan = function (bigip, obj) {
+  if (bigip.iControl == 'rest') {
+    if (obj === undefined) {
+      var lurl = '/net/vlan'
+      // list without name
+      var response = bigipRestList(bigip.ip, bigip.user, bigip.pass, lurl);
+      return response;
+    } else {
+      // convert virtual name to rest name
+      var objRestName = obj.replace(/\//g, "~");
+      var lurl = '/net/vlan/' + objRestName;
+      var response = bigipRestList(bigip.ip, bigip.user, bigip.pass, lurl);
+      return response;
+    }
+  }
+}
 
 BigipClient.list.security.firewall.address_list = function () { }
 BigipClient.list.security.firewall.policy = function () { }
