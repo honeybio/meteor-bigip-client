@@ -1,7 +1,7 @@
 BigipClient.delete.apm.aaa = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/apm/aaa/' + objRestName;
@@ -13,7 +13,7 @@ BigipClient.delete.apm.aaa = function (bigip, obj) {
 BigipClient.delete.apm.configuration.captcha = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/apm/configuration/captcha/' + objRestName;
@@ -25,7 +25,7 @@ BigipClient.delete.apm.configuration.captcha = function (bigip, obj) {
 BigipClient.delete.apm.epsec = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/apm/epsec/' + objRestName;
@@ -37,7 +37,7 @@ BigipClient.delete.apm.epsec = function (bigip, obj) {
 BigipClient.delete.apm.ntlm = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/apm/ntlm/' + objRestName;
@@ -49,7 +49,7 @@ BigipClient.delete.apm.ntlm = function (bigip, obj) {
 BigipClient.delete.apm.policy = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/apm/policy/' + objRestName;
@@ -61,7 +61,7 @@ BigipClient.delete.apm.policy = function (bigip, obj) {
 BigipClient.delete.apm.profile = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/apm/profile/' + objRestName;
@@ -73,7 +73,7 @@ BigipClient.delete.apm.profile = function (bigip, obj) {
 BigipClient.delete.apm.sso = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/apm/sso/' + objRestName;
@@ -85,7 +85,7 @@ BigipClient.delete.apm.sso = function (bigip, obj) {
 BigipClient.delete.asm.policy = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/apm/policy/' + objRestName;
@@ -97,7 +97,7 @@ BigipClient.delete.asm.policy = function (bigip, obj) {
 BigipClient.delete.gtm.datacenter = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/gtm/datacenter/' + objRestName;
@@ -109,7 +109,7 @@ BigipClient.delete.gtm.datacenter = function (bigip, obj) {
 BigipClient.delete.gtm.distributed_app = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/gtm/distributed-app/' + objRestName;
@@ -121,7 +121,7 @@ BigipClient.delete.gtm.distributed_app = function (bigip, obj) {
 BigipClient.delete.gtm.link = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/gtm/link/' + objRestName;
@@ -133,7 +133,7 @@ BigipClient.delete.gtm.link = function (bigip, obj) {
 BigipClient.delete.gtm.listener = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/gtm/listener/' + objRestName;
@@ -145,7 +145,7 @@ BigipClient.delete.gtm.listener = function (bigip, obj) {
 BigipClient.delete.gtm.pool.a = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/gtm/pool/a/' + objRestName;
@@ -157,7 +157,7 @@ BigipClient.delete.gtm.pool.a = function (bigip, obj) {
 BigipClient.delete.gtm.pool.aaaa = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/gtm/pool/aaaa/' + objRestName;
@@ -172,7 +172,7 @@ BigipClient.delete.gtm.rule = function (bigip, obj) { }
 BigipClient.delete.gtm.server = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/gtm/server/' + objRestName;
@@ -185,7 +185,7 @@ BigipClient.delete.gtm.topology = function (bigip, obj) { }
 BigipClient.delete.gtm.wideip.a = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/gtm/wideip/a/' + objRestName;
@@ -197,7 +197,7 @@ BigipClient.delete.gtm.wideip.a = function (bigip, obj) {
 BigipClient.delete.gtm.wideip.aaaa = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/gtm/wideip/aaaa/' + objRestName;
@@ -209,7 +209,7 @@ BigipClient.delete.gtm.wideip.aaaa = function (bigip, obj) {
 BigipClient.delete.ltm.data_group.internal = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/ltm/data-group/internal/' + objRestName;
@@ -221,7 +221,7 @@ BigipClient.delete.ltm.data_group.internal = function (bigip, obj) {
 BigipClient.delete.ltm.data_group.external = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/ltm/data-group/external/' + objRestName;
@@ -233,7 +233,7 @@ BigipClient.delete.ltm.data_group.external = function (bigip, obj) {
 BigipClient.delete.ltm.dns.nameserver = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/ltm/dns/nameserver/' + objRestName;
@@ -245,7 +245,7 @@ BigipClient.delete.ltm.dns.nameserver = function (bigip, obj) {
 BigipClient.delete.ltm.dns.dnssec.key = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/ltm/dns/dnssec/key/' + objRestName;
@@ -257,7 +257,7 @@ BigipClient.delete.ltm.dns.dnssec.key = function (bigip, obj) {
 BigipClient.delete.ltm.dns.dnssec.zone = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/ltm/dns/dnssec/zone/' + objRestName;
@@ -271,7 +271,7 @@ BigipClient.delete.ltm.ifile = function (bigip, obj) { }
 BigipClient.delete.ltm.monitor.firepass = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/ltm/monitor/firepass/' + objRestName;
@@ -283,7 +283,7 @@ BigipClient.delete.ltm.monitor.firepass = function (bigip, obj) {
 BigipClient.delete.ltm.nat = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/ltm/nat/' + objRestName;
@@ -295,7 +295,7 @@ BigipClient.delete.ltm.nat = function (bigip, obj) {
 BigipClient.delete.ltm.node = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/ltm/node/' + objRestName;
@@ -308,7 +308,7 @@ BigipClient.delete.ltm.persistence = function (bigip) { }
 BigipClient.delete.ltm.policy = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/ltm/policy/' + objRestName;
@@ -321,7 +321,7 @@ BigipClient.delete.ltm.policy_strategy = function (bigip, obj) { }
 BigipClient.delete.ltm.pool = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/ltm/pool/' + objRestName;
@@ -333,7 +333,7 @@ BigipClient.delete.ltm.pool = function (bigip, obj) {
 BigipClient.delete.ltm.profile = function (bigip) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/ltm/profile/' + objRestName;
@@ -345,7 +345,7 @@ BigipClient.delete.ltm.profile = function (bigip) {
 BigipClient.delete.ltm.rule = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/ltm/rule/' + objRestName;
@@ -357,7 +357,7 @@ BigipClient.delete.ltm.rule = function (bigip, obj) {
 BigipClient.delete.ltm.snat = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/ltm/snat/' + objRestName;
@@ -369,7 +369,7 @@ BigipClient.delete.ltm.snat = function (bigip, obj) {
 BigipClient.delete.ltm.snat_translation = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/ltm/snat-translation/' + objRestName;
@@ -381,7 +381,7 @@ BigipClient.delete.ltm.snat_translation = function (bigip, obj) {
 BigipClient.delete.ltm.snatpool = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/ltm/snatpool/' + objRestName;
@@ -395,7 +395,7 @@ BigipClient.delete.ltm.traffic_class = function (bigip, obj) { }
 BigipClient.delete.ltm.virtual = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/ltm/virtual/' + objRestName;
@@ -407,7 +407,7 @@ BigipClient.delete.ltm.virtual = function (bigip, obj) {
 BigipClient.delete.ltm.virtual_address = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/ltm/virtual-address/' + objRestName;
@@ -419,7 +419,7 @@ BigipClient.delete.ltm.virtual_address = function (bigip, obj) {
 BigipClient.delete.net.route = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/net/route/' + objRestName;
@@ -431,7 +431,7 @@ BigipClient.delete.net.route = function (bigip, obj) {
 BigipClient.delete.net.self = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/net/self/' + objRestName;
@@ -443,7 +443,7 @@ BigipClient.delete.net.self = function (bigip, obj) {
 BigipClient.delete.net.trunk = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/net/trunk/' + objRestName;
@@ -455,7 +455,7 @@ BigipClient.delete.net.trunk = function (bigip, obj) {
 BigipClient.delete.net.vlan = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/net/vlan/' + objRestName;
@@ -468,7 +468,7 @@ BigipClient.delete.net.vlan = function (bigip, obj) {
 BigipClient.delete.security.firewall.address_list = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/security/firewall/address-list/' + objRestName;
@@ -480,7 +480,7 @@ BigipClient.delete.security.firewall.address_list = function (bigip, obj) {
 BigipClient.delete.security.firewall.policy = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/security/firewall/policy/' + objRestName;
@@ -492,7 +492,7 @@ BigipClient.delete.security.firewall.policy = function (bigip, obj) {
 BigipClient.delete.security.firewall.port_list = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/security/firewall/port-list/' + objRestName;
@@ -504,7 +504,7 @@ BigipClient.delete.security.firewall.port_list = function (bigip, obj) {
 BigipClient.delete.security.firewall.port_misuse_policy = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/security/firewall/port-misuse-policy/' + objRestName;
@@ -516,7 +516,7 @@ BigipClient.delete.security.firewall.port_misuse_policy = function (bigip, obj) 
 BigipClient.delete.security.firewall.rule_list = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/security/firewall/rule-list/' + objRestName;
@@ -528,7 +528,7 @@ BigipClient.delete.security.firewall.rule_list = function (bigip, obj) {
 BigipClient.delete.security.firewall.schedule = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/security/firewall/schedule/' + objRestName;
@@ -540,7 +540,7 @@ BigipClient.delete.security.firewall.schedule = function (bigip, obj) {
 BigipClient.delete.security.firewall.user_domain = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/security/firewall/user-domain/' + objRestName;
@@ -552,7 +552,7 @@ BigipClient.delete.security.firewall.user_domain = function (bigip, obj) {
 BigipClient.delete.security.firewall.user_list = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/security/firewall/user-list/' + objRestName;
@@ -564,7 +564,7 @@ BigipClient.delete.security.firewall.user_list = function (bigip, obj) {
 BigipClient.delete.sys.application = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/sys/application/' + objRestName;
@@ -576,7 +576,7 @@ BigipClient.delete.sys.application = function (bigip, obj) {
 BigipClient.delete.sys.crypto.cert = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/sys/crypto/cert/' + objRestName;
@@ -588,7 +588,7 @@ BigipClient.delete.sys.crypto.cert = function (bigip, obj) {
 BigipClient.delete.sys.crypto.key = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/sys/crypto/key/' + objRestName;
@@ -600,7 +600,7 @@ BigipClient.delete.sys.crypto.key = function (bigip, obj) {
 BigipClient.delete.sys.crypto.csr = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      throw Meteor.error(500, 'No object defined', 'The name of the object is required');
+      throw new Meteor.error(500, 'No object defined', 'The name of the object is required');
     } else {
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/sys/crypto/csr/' + objRestName;
