@@ -33,6 +33,7 @@ BigipClient = {
     sys: {
       crypto: { },
     },
+    vcmp: { },
     wom: { },
   },
   delete: {
@@ -66,6 +67,7 @@ BigipClient = {
     sys: {
       crypto: { },
     },
+    vcmp: { },
     wom: { },
   },
   install: {
@@ -106,6 +108,7 @@ BigipClient = {
     sys: {
       crypto: { },
     },
+    vcmp: { },
     wom: { },
   },
   load: {
@@ -145,6 +148,7 @@ BigipClient = {
     sys: {
       crypto: { },
     },
+    vcmp: { },
     wom: { },
   },
   qkview: { },
@@ -189,6 +193,7 @@ BigipClient = {
     sys: {
       crypto: { },
     },
+    vcmp: { },
     wom: { },
   },
 }

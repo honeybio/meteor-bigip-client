@@ -1168,3 +1168,30 @@ BigipClient.list.sys.provision = function (bigip) {
     return response;
   }
 }
+
+BigipClient.list.vcmp.guest = function (bigip) {
+  if (bigip.iControl == 'rest') {
+    var lurl = '/vcmp/guest'
+    // list without name
+    var response = bigipRestList(bigip.ip, bigip.user, bigip.pass, lurl);
+    return response;
+  }
+}
+
+BigipClient.list.vcmp.virtual_disk = function (bigip) {
+  if (bigip.iControl == 'rest') {
+    var lurl = '/vcmp/virtual-disk'
+    // list without name
+    var response = bigipRestList(bigip.ip, bigip.user, bigip.pass, lurl);
+    return response;
+  }
+}
+
+BigipClient.list.vcmp.virtual_disk_template = function (bigip) {
+  if (bigip.iControl == 'rest') {
+    var lurl = '/vcmp/virtual-disk-template'
+    // list without name
+    var response = bigipRestList(bigip.ip, bigip.user, bigip.pass, lurl);
+    return response;
+  }
+}
