@@ -1160,6 +1160,15 @@ BigipClient.list.sys.management_ip = function (bigip) {
   }
 }
 
+BigipClient.list.sys.management_route = function (bigip) {
+  if (bigip.iControl == 'rest') {
+    var lurl = '/sys/management-route'
+    // list without name
+    var response = bigipRestList(bigip.ip, bigip.user, bigip.pass, lurl);
+    return response;
+  }
+}
+
 BigipClient.list.sys.provision = function (bigip) {
   if (bigip.iControl == 'rest') {
     var lurl = '/sys/provision'
