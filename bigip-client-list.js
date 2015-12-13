@@ -706,7 +706,7 @@ BigipClient.list.ltm.monitor.sip = function (bigip) {
       return response;
     }
   }
-  }
+}
 BigipClient.list.ltm.monitor.smb = function (bigip) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
@@ -722,7 +722,7 @@ BigipClient.list.ltm.monitor.smb = function (bigip) {
       return response;
     }
   }
-  }
+}
 BigipClient.list.ltm.monitor.smtp = function (bigip) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
@@ -738,7 +738,7 @@ BigipClient.list.ltm.monitor.smtp = function (bigip) {
       return response;
     }
   }
-  }
+}
 BigipClient.list.ltm.monitor.snmp_dca = function (bigip) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
@@ -754,7 +754,7 @@ BigipClient.list.ltm.monitor.snmp_dca = function (bigip) {
       return response;
     }
   }
-  }
+}
 BigipClient.list.ltm.monitor.snmp_dca_base = function (bigip) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
@@ -770,7 +770,7 @@ BigipClient.list.ltm.monitor.snmp_dca_base = function (bigip) {
       return response;
     }
   }
-  }
+}
 BigipClient.list.ltm.monitor.soap = function (bigip) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
@@ -786,7 +786,7 @@ BigipClient.list.ltm.monitor.soap = function (bigip) {
       return response;
     }
   }
-  }
+}
 BigipClient.list.ltm.monitor.tcp = function (bigip) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
@@ -802,7 +802,7 @@ BigipClient.list.ltm.monitor.tcp = function (bigip) {
       return response;
     }
   }
-  }
+}
 BigipClient.list.ltm.monitor.tcp_echo = function (bigip) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
@@ -818,7 +818,7 @@ BigipClient.list.ltm.monitor.tcp_echo = function (bigip) {
       return response;
     }
   }
-  }
+}
 BigipClient.list.ltm.monitor.tcp_half_open = function (bigip) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
@@ -834,7 +834,7 @@ BigipClient.list.ltm.monitor.tcp_half_open = function (bigip) {
       return response;
     }
   }
-  }
+}
 BigipClient.list.ltm.monitor.udp = function (bigip) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
@@ -850,7 +850,7 @@ BigipClient.list.ltm.monitor.udp = function (bigip) {
       return response;
     }
   }
-  }
+}
 BigipClient.list.ltm.monitor.virtual_location = function (bigip) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
@@ -866,7 +866,7 @@ BigipClient.list.ltm.monitor.virtual_location = function (bigip) {
       return response;
     }
   }
-  }
+}
 BigipClient.list.ltm.monitor.wap = function (bigip) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
@@ -882,7 +882,7 @@ BigipClient.list.ltm.monitor.wap = function (bigip) {
       return response;
     }
   }
-  }
+}
 BigipClient.list.ltm.monitor.wmi = function (bigip) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
@@ -1169,12 +1169,37 @@ BigipClient.list.sys.provision = function (bigip) {
   }
 }
 
-BigipClient.list.vcmp.guest = function (bigip) {
+BigipClient.list.sys.software.image = function (bigip) {
   if (bigip.iControl == 'rest') {
-    var lurl = '/vcmp/guest'
+    var lurl = '/sys/software/image'
     // list without name
     var response = bigipRestList(bigip.ip, bigip.user, bigip.pass, lurl);
     return response;
+  }
+}
+
+BigipClient.list.sys.software.hotfix = function (bigip) {
+  if (bigip.iControl == 'rest') {
+    var lurl = '/sys/software/hotfix'
+    // list without name
+    var response = bigipRestList(bigip.ip, bigip.user, bigip.pass, lurl);
+    return response;
+  }
+}
+
+BigipClient.list.vcmp.guest = function (bigip, obj) {
+  if (bigip.iControl == 'rest') {
+    if (obj === undefined) {
+      var lurl = '/vcmp/guest'
+      // list without name
+      var response = bigipRestList(bigip.ip, bigip.user, bigip.pass, lurl);
+      return response;
+    } else {
+      var objRestName = obj.replace(/\//g, "~");
+      var lurl = '/vcmp/guest/' + objRestName;
+      var response = bigipRestList(bigip.ip, bigip.user, bigip.pass, lurl);
+      return response;
+    }
   }
 }
 

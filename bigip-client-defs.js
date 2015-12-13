@@ -32,6 +32,7 @@ BigipClient = {
     },
     sys: {
       crypto: { },
+      software: { },
     },
     vcmp: { },
     wom: { },
@@ -66,6 +67,7 @@ BigipClient = {
     },
     sys: {
       crypto: { },
+      software: { },
     },
     vcmp: { },
     wom: { },
@@ -107,6 +109,7 @@ BigipClient = {
     },
     sys: {
       crypto: { },
+      software: { },
     },
     vcmp: { },
     wom: { },
