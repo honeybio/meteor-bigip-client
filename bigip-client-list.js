@@ -102,6 +102,9 @@ BigipClient.list.gtm.pool.a = function (bigip, obj) {
     var options = { expandAll: true };
     if (obj === undefined) {
       var lurl = '/gtm/pool/a'
+      if (bigip.version.match(/11/)) {
+        lurl = '/gtm/pool';
+      }
       // list without name
       var response = bigipRestList(bigip.ip, bigip.user, bigip.pass, lurl, options);
       return response;
@@ -109,6 +112,9 @@ BigipClient.list.gtm.pool.a = function (bigip, obj) {
       // convert object name to rest name
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/gtm/pool/a/' + objRestName;
+      if (bigip.version.match(/11/)) {
+        lurl = '/gtm/pool' + objRestName;
+      }
       var response = bigipRestList(bigip.ip, bigip.user, bigip.pass, lurl, options);
       return response;
     }
@@ -153,7 +159,10 @@ BigipClient.list.gtm.topology = function () { }
 BigipClient.list.gtm.wideip.a = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
     if (obj === undefined) {
-      var lurl = '/gtm/wideip/a'
+      var lurl = '/gtm/wideip/a';
+      if (bigip.version.match(/11/)) {
+        lurl = '/gtm/wideip';
+      }
       // list without name
       var response = bigipRestList(bigip.ip, bigip.user, bigip.pass, lurl);
       return response;
@@ -161,6 +170,9 @@ BigipClient.list.gtm.wideip.a = function (bigip, obj) {
       // convert object name to rest name
       var objRestName = obj.replace(/\//g, "~");
       var lurl = '/gtm/wideip/a/' + objRestName;
+      if (bigip.version.match(/11/)) {
+        lurl = '/gtm/wideip' + objRestName;
+      }
       var response = bigipRestList(bigip.ip, bigip.user, bigip.pass, lurl);
       return response;
     }
