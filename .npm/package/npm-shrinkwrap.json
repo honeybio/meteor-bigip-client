@@ -1,5 +1,8 @@
 {
   "dependencies": {
+    "python-shell": {
+      "version": "0.3.0"
+    },
     "request": {
       "version": "2.67.0",
       "dependencies": {

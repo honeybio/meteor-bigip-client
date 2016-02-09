@@ -199,4 +199,6 @@ BigipClient = {
     vcmp: { },
     wom: { },
   },
+  upload: { },
+  download: { },
 }
