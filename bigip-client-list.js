@@ -99,7 +99,6 @@ BigipClient.list.gtm.global_settings.general = function (bigip) {
 }
 BigipClient.list.gtm.pool.a = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
-    console.log('in pool list');
     var options = { expandAll: true };
     if (obj === undefined) {
       var lurl = '/gtm/pool/a'

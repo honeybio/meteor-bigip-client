@@ -15,9 +15,11 @@ pyRun = function (cmd, argList) {
   var meteor_root = Npm.require('fs').realpathSync(process.cwd());
   var baseAssets = meteor_root + "/assets/app/bigip-soap-client/";
   var command = "python -u " + baseAssets + runCmd;
-  exec(command, function(err, stdout, stderr) {
+  exec(command, {maxBuffer: 2048 * 1024}, function(err, stdout, stderr) {
       if (err) {
-          console.log(err);
+        console.log(err);
+      } else if (stderr) {
+        console.log(stderr);
       } else {
         future.return(stdout.toString());
       }
@@ -25,7 +27,7 @@ pyRun = function (cmd, argList) {
   return future.wait();
 },
 
-bigipKeyDownload = function(ip, user, pass, name) {
+bigipSoapKeyDownload = function(ip, user, pass, name) {
   var args = [ip, user, pass, name];
   try {
     var result = pyRun('getKey.py', args);
@@ -36,7 +38,7 @@ bigipKeyDownload = function(ip, user, pass, name) {
   }
 }
 
-bigipCertDownload = function(ip, user, pass, name) {
+bigipSoapCertDownload = function(ip, user, pass, name) {
   var args = [ip, user, pass, name];
   try {
     var result = pyRun('getCert.py', args);
