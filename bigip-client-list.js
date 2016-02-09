@@ -956,12 +956,19 @@ BigipClient.list.ltm.pool = function (bigip, obj) {
     }
   }
 }
-BigipClient.list.ltm.profile = function (bigip) {
+BigipClient.list.ltm.profile = function (bigip, obj) {
   if (bigip.iControl == 'rest') {
-    var lurl = '/ltm/profile'
-    // list without name
-    var response = bigipRestList(bigip.ip, bigip.user, bigip.pass, lurl);
-    return response;
+    if (obj === undefined) {
+      var lurl = '/ltm/profile'
+      // list without name
+      var response = bigipRestList(bigip.ip, bigip.user, bigip.pass, lurl);
+      return response;
+    } else if (obj.type === 'clientssl') {
+      var objRestName = obj.name.replace(/\//g, "~");
+      var lurl = '/ltm/profile/client-ssl/' + objRestName;
+      var response = bigipRestList(bigip.ip, bigip.user, bigip.pass, lurl);
+      return response;
+    }
   }
 }
 BigipClient.list.ltm.rule = function (bigip, obj) {

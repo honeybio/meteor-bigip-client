@@ -202,7 +202,7 @@ bigipRestDelete = function(ip, user, pass, url) {
   }
 }
 
-bigipRestCreate = function(ip, user, pass, url, body) {
+bigipRestCreate = function(ip, user, pass, url, body, options) {
   /**
   * Method Description
   *
@@ -224,7 +224,7 @@ bigipRestCreate = function(ip, user, pass, url, body) {
   try {
     var result = syncList(url, body);
     if (typeof result !== 'undefined') {
-      return true;
+      return result;
     } else {
       return false;
     }

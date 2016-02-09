@@ -24,6 +24,30 @@ BigipClient.create.ltm.nat = function () { }
 BigipClient.create.ltm.node = function () { }
 BigipClient.create.ltm.policy = function () { }
 BigipClient.create.ltm.policy_strategy = function () { }
+BigipClient.create.ltm.profile = function (bigip, obj) {
+  if (bigip.iControl == 'rest') {
+    if (obj === undefined) {
+      return null;
+    } else if (obj.type === 'clientssl') {
+      var chainName = obj.cert.replace(/\/Common\//, '') + '_' + obj.chain.replace(/\/Common\//, '');
+      //var chain = {
+      //  cert: obj.cert,
+      //  chain: obj.chain,
+      //  key: obj.key
+      //}
+      var lurl = '/ltm/profile/client-ssl';
+      var body = {
+        name: obj.name,
+        ciphers: obj.ciphers,
+        cert: obj.cert,
+        key: obj.key,
+        chain: obj.chain
+      }
+      var response = bigipRestCreate(bigip.ip, bigip.user, bigip.pass, lurl, body);
+      return response;
+    }
+  }
+}
 BigipClient.create.ltm.pool = function () { }
 BigipClient.create.ltm.rule = function () { }
 BigipClient.create.ltm.snat = function () { }
