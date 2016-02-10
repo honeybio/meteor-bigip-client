@@ -8,7 +8,7 @@ BigipClient.download.certificate = function (bigip, obj) {
 }
 
 BigipClient.download.key = function (bigip, obj) {
-  if (obj === undefined) {
+  if (obj.name === undefined) {
     //
   } else {
     var cert = bigipSoapKeyDownload(bigip.ip, bigip.user, bigip.pass, obj.name)
@@ -21,5 +21,13 @@ BigipClient.download.ucs = function (bigip, obj) {
 }
 
 BigipClient.download.qkview = function (bigip, obj) {
+
+}
+
+BigipClient.upload.certificate = function (bigip, obj) {
+
+}
+
+BigipClient.upload.key = function (bigip, obj) {
 
 }

@@ -25,7 +25,7 @@ pyRun = function (cmd, argList) {
       }
   });
   return future.wait();
-},
+}
 
 bigipSoapKeyDownload = function(ip, user, pass, name) {
   var args = [ip, user, pass, name];
