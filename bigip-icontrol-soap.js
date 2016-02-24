@@ -47,3 +47,24 @@ bigipSoapCertDownload = function(ip, user, pass, name) {
     console.log(e);
   }
 }
+
+bigipSoapKeyUpload = function(ip, user, pass, name, overwrite) {
+  var args = [ip, user, pass, name, overwrite];
+  try {
+    var result = pyRun('createKey.py', args);
+    return 'Success!';
+    //console.log(result);
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+bigipSoapCertUpload = function(ip, user, pass, name, overwrite) {
+  var args = [ip, user, pass, name, overwrite];
+  try {
+    var result = pyRun('createCert.py', args);
+    return 'Success!';
+  } catch (e) {
+    console.log(e);
+  }
+}
