@@ -28,7 +28,7 @@ BigipClient.upload.certificate = function (bigip, obj) {
   if (obj.name === undefined) {
     console.log(obj);
   } else {
-    var cert = bigipSoapCertUpload(bigip.ip, bigip.user, bigip.pass, obj.name, obj.overwrite);
+    var cert = bigipSoapCertUpload(bigip.ip, bigip.user, bigip.pass, obj.name, obj.overwrite, obj.pem);
     return cert;
   }
 }
@@ -37,7 +37,7 @@ BigipClient.upload.key = function (bigip, obj) {
   if (obj.name === undefined) {
     //
   } else {
-    var cert = bigipSoapKeyUpload(bigip.ip, bigip.user, bigip.pass, obj.name, obj.overwrite);
+    var cert = bigipSoapKeyUpload(bigip.ip, bigip.user, bigip.pass, obj.name, obj.overwrite, obj.pem);
     return cert;
   }
 }

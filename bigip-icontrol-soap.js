@@ -3,7 +3,7 @@
 var meteorRoot = Npm.require('fs').realpathSync(process.cwd());
 var pythonRoot = meteorRoot + "/assets/app/bigip-soap-client/";
 
-pyRun = function (cmd, argList) {
+pyRun = function (cmd, argList, stdin) {
   var pythonPath = '';
   var runCmd = cmd;
   for (i = 0; i < argList.length; i++) {
@@ -15,7 +15,7 @@ pyRun = function (cmd, argList) {
   var meteor_root = Npm.require('fs').realpathSync(process.cwd());
   var baseAssets = meteor_root + "/assets/app/bigip-soap-client/";
   var command = "python -u " + baseAssets + runCmd;
-  exec(command, {maxBuffer: 2048 * 1024}, function(err, stdout, stderr) {
+  child = exec(command, {maxBuffer: 2048 * 1024}, function(err, stdout, stderr) {
       if (err) {
         console.log(err);
       } else if (stderr) {
@@ -24,6 +24,11 @@ pyRun = function (cmd, argList) {
         future.return(stdout.toString());
       }
   });
+  if (stdin !== undefined) {
+    child.stdin.setEncoding('utf-8');
+    child.stdin.write(stdin);
+    child.stdin.end();
+  }
   return future.wait();
 }
 
@@ -48,10 +53,10 @@ bigipSoapCertDownload = function(ip, user, pass, name) {
   }
 }
 
-bigipSoapKeyUpload = function(ip, user, pass, name, overwrite) {
+bigipSoapKeyUpload = function(ip, user, pass, name, overwrite, pem) {
   var args = [ip, user, pass, name, overwrite];
   try {
-    var result = pyRun('createKey.py', args);
+    var result = pyRun('createKey.py', args, pem);
     return 'Success!';
     //console.log(result);
   } catch (e) {
@@ -59,10 +64,10 @@ bigipSoapKeyUpload = function(ip, user, pass, name, overwrite) {
   }
 }
 
-bigipSoapCertUpload = function(ip, user, pass, name, overwrite) {
+bigipSoapCertUpload = function(ip, user, pass, name, overwrite, pem) {
   var args = [ip, user, pass, name, overwrite];
   try {
-    var result = pyRun('createCert.py', args);
+    var result = pyRun('createCert.py', args, pem);
     return 'Success!';
   } catch (e) {
     console.log(e);
